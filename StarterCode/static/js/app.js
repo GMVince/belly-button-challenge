@@ -1,5 +1,5 @@
 //get url data
-const data = "https://github.com/GMVince/belly-button-challenge/blob/main/StarterCode/static/js/app.js";
+const data = " https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
 d3.json("data.json").then(function (data) {
     let otuIds = data.samples[0].otu_ids.slice(0, 10).reverse();
