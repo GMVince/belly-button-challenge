@@ -1,7 +1,7 @@
 //get url data
-const data = " https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+const dataUrl = " https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
-d3.json("data.json").then(function (data) {
+d3.json(dataUrl).then(function (data) {
     let otuIds = data.samples[0].otu_ids.slice(0, 10).reverse();
     let sampleValues = data.samples[0].sample_values.slice(0, 10).reverse();
     let otuLabels = data.samples[0].otu_labels.slice(0, 10).reverse();
@@ -12,39 +12,39 @@ d3.json("data.json").then(function (data) {
         text: otuLabels,
         type: "bar",
         orientation: "h"
-};
+    };
     let layout = {
         title: "Top 10 OTUs",
         xaxis: { title: "Sample Values" },
         yaxis: { title: "OTU's" }
-};
-Plotly.newplot("bar", [trace], layout);
+    };
+    Plotly.newPlot("bar", [trace], layout);
 
-// Populate the dropdown menu with the sample IDs
-let dropdown = d3.select("#selDataset");
-data.names.forEach(name => {
-    dropdown.append("option").text(name).property("value", name);
-});
-
-// Define a function to update the plot when the dropdown menu changes
-function updatePlot() {
-    let selectedName = dropdown.property("value");
-    let selectedSample = data.samples.find(sample => sample.id === selectedName);
-    let selectedOtuIds = selectedSample.otu_ids.slice(0, 10).reverse();
-    let selectedSampleValues = selectedSample.sample_values.slice(0, 10).reverse();
-    let selectedOtuLabels = selectedSample.otu_labels.slice(0, 10).reverse();
-    Plotly.update("bar", {
-        x: [selectedSampleValues],
-        y: [selectedOtuIds.map(id => `OTU ${id}`)],
-        text: [selectedOtuLabels]
+    // Populate the dropdown menu with the sample IDs
+    let dropdown = d3.select("#selDataset");
+    data.names.forEach(name => {
+        dropdown.append("option").text(name).property("value", name);
     });
-}
 
-// Bind the update function to the dropdown menu
-dropdown.on("change", updatePlot);
+    // Define a function to update the plot when the dropdown menu changes
+    function updatePlot() {
+        let selectedName = dropdown.property("value");
+        let selectedSample = data.samples.find(sample => sample.id === selectedName);
+        let selectedOtuIds = selectedSample.otu_ids.slice(0, 10).reverse();
+        let selectedSampleValues = selectedSample.sample_values.slice(0, 10).reverse();
+        let selectedOtuLabels = selectedSample.otu_labels.slice(0, 10).reverse();
+        Plotly.update("bar", {
+            x: [selectedSampleValues],
+            y: [selectedOtuIds.map(id => `OTU ${id}`)],
+            text: [selectedOtuLabels]
+        });
+    }
 
-  });
-d3.json("data.json").then(function (data) {
+    // Bind the update function to the dropdown menu
+    dropdown.on("change", updatePlot);
+
+});
+d3.json(dataUrl).then(function (data) {
 
     // Extract the OTUs, sample values, and labels for all samples in the dataset
     var otuIds = data.samples.map(sample => sample.otu_ids);
@@ -76,7 +76,7 @@ d3.json("data.json").then(function (data) {
     Plotly.newPlot("bubble", [trace], layout);
 
 });
-d3.json("data.json").then(function (data) {
+d3.json(dataUrl).then(function (data) {
 
     var metadata = data.metadata[0];
 
