@@ -1,5 +1,5 @@
 //get url data
-const data = "C:\Users\vince\OneDrive\Desktop\Data-Analysis\MSU-VIRT-DATA-PT-11-2022-U-LOLC\02-Homework\belly-button-challenge\StarterCode\samples.json";
+const data = "https://github.com/GMVince/belly-button-challenge/blob/main/StarterCode/static/js/app.js";
 
 d3.json("data.json").then(function (data) {
     let otuIds = data.samples[0].otu_ids.slice(0, 10).reverse();
