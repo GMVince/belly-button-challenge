@@ -138,15 +138,8 @@ Comments are disabled for graded submissions in BootCamp Spot. If you have quest
 IMPORTANT
 It is your responsibility to include a note in the README section of your repo specifying code source and its location within your repo. This applies if you have worked with a peer on an assignment, used code in which you did not author or create sourced from a forum such as Stack Overflow, or you received code outside curriculum content from support staff such as an Instructor, TA, Tutor, or Learning Assistant. This will provide visibility to grading staff of your circumstance in order to avoid flagging your work as plagiarized.
 
-If you are struggling with a Challenge or any aspect of the curriculum, please remember that there are student support services available for you:
-
-Office hours facilitated by your TA(s)
-
-Tutor sessions (sign upLinks to an external site.)
-
-Ask the class Slack channel/get peer support
-
-AskBCS Learning Assistants
+References:  https://plotly.com/python/bubble-charts/ referenced this page for formats to setup bubble chart.
+https://chat.openai.com/chat - referenced to check for type errors and incorrect syntax.
 
 References
 Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/Links to an external site.
